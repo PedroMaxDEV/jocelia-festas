@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jocelia Festa - Locação e Decoração</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jocelia Festa</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
   <header>
-    <h1>Jocelia Festa</h1>
-    <p>Locação e Decoração de Festas</p>
-    <input type="text" id="search" placeholder="Buscar produtos..." />
-    <div id="search-suggestions"></div>
-    <button id="open-cart">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+    <h1>JOCELIA FESTAS</h1>
+    <input type="text" id="searchBar" placeholder="Buscar produtos ou ID..." />
+    <ul id="suggestions"></ul>
+    <button id="openCart">🛒 Carrinho</button>
   </header>
 
-  <main>
-    <nav>
-      <button class="filter-btn" data-category="destaques">Destaques</button>
-      <button class="filter-btn" data-category="kits">Kits</button>
-      <button class="filter-btn" data-category="decorações">Decorações</button>
-      <button class="filter-btn" data-category="itens avulsos">Itens Avulsos</button>
-    </nav>
+  <nav>
+    <div class="categories">
+      <button class="category-btn" data-category="destaques">Destaques</button>
+      <button class="category-btn" data-category="kits">Kits</button>
+      <button class="category-btn" data-category="decorações">Decorações</button>
+      <button class="category-btn" data-category="itens avulsos">Itens Avulsos</button>
+    </div>
+  </nav>
 
-    <section id="product-list"></section>
-  </main>
+  <main id="productList"></main>
 
-  <div id="cart" class="hidden">
-    <button id="close-cart">Fechar</button>
-    <h2>Carrinho</h2>
-    <div id="cart-items"></div>
-    <input type="text" id="coupon" placeholder="Cupom de desconto" />
-    <p>Total: R$ <span id="total">0.00</span></p>
-    <button id="checkout">Finalizar Compra no WhatsApp</button>
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span id="closeCart" class="close">&times;</span>
+      <h2>Carrinho</h2>
+      <ul id="cartItems"></ul>
+      <p id="cartTotal">Total: R$ 0,00</p>
+      <input type="text" id="cupomInput" placeholder="Cupom de desconto" />
+      <button id="applyCupom">Aplicar Cupom</button>
+      <button id="finalizarCompra">Finalizar Compra via WhatsApp</button>
+    </div>
   </div>
 
-  <div id="modal" class="hidden">
-    <button id="close-modal">✖</button>
-    <button id="prev-image">◀</button>
-    <img id="modal-image" src="" alt="Imagem ampliada" />
-    <button id="next-image">▶</button>
+  <div id="imageModal" class="modal">
+    <div class="modal-image-content">
+      <span class="close" id="closeImageModal">&times;</span>
+      <img id="modalImage" />
+      <div class="nav-buttons">
+        <button id="prevImage">⏴</button>
+        <button id="nextImage">⏵</button>
+      </div>
+    </div>
   </div>
 
-  <div id="notification" class="hidden">Produto adicionado ao carrinho!</div>
+  <div id="notification" class="hidden"></div>
 
   <script src="js/script.js"></script>
 </body>
-
 </html>

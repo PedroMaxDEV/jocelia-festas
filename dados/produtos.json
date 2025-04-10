@@ -1,29 +1,21 @@
 [
   {
     "id": 1,
-    "nome": "Kit futebol",
-    "descricao": "Kit completo para sua festa",
-    "preco": 150.00,
+    "nome": "Kit Futebol",
+    "preco": 59.90,
+    "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
-    "imagens": ["img/futebol.png", "img/futebol2.png"],
+    "imagens": ["img/futebol.png", "img/produto2.jpg"],
     "destaque": true
   },
   {
     "id": 2,
-    "nome": "Decoração Tema Tropical",
-    "descricao": "Decoração para festas tropicais",
-    "preco": 80.00,
-    "categoria": "decoracoes",
-    "imagens": ["img/produto2.jpg"],
-    "destaque": false
-  },
-  {
-    "id": 3,
-    "nome": "Jarro Decorativo",
-    "descricao": "Jarro para complementar sua decoração",
-    "preco": 30.00,
+    "nome": "Bexigas Azul",
+    "preco": 9.99,
+    "descricao": "e azul ne kkk",
     "categoria": "itens avulsos",
     "imagens": ["img/produto3.jpg"],
     "destaque": false
+    
   }
 ]

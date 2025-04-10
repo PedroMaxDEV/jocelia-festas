@@ -1,153 +1,199 @@
-let products = [];
-let cart = [];
-let currentImages = [];
-let currentImageIndex = 0;
+let produtos = [];
+let carrinho = [];
+let imagemAtual = 0;
+let imagensProduto = [];
 
-fetch('dados/produtos.json')
-  .then(response => response.json())
-  .then(data => {
-    products = data;
-    displayProducts(products);
-  });
+async function carregarProdutos() {
+  const res = await fetch('dados/produtos.json');
+  produtos = await res.json();
+  exibirProdutos(produtos);
+}
 
-function displayProducts(prodList) {
-  const list = document.getElementById('product-list');
-  list.innerHTML = '';
-  prodList.forEach(product => {
-    const item = document.createElement('div');
-    item.className = 'product';
-    item.innerHTML = `
-      <img src="${product.imagens[0]}" onclick="openModal(${product.id})">
-      <h3>${product.nome}</h3>
-      <p>R$ ${product.preco.toFixed(2)}</p>
-      <p>${product.descricao}</p>
-      <button onclick="addToCart(${product.id})">Adicionar ao Carrinho</button>
-    `;
-    list.appendChild(item);
+function exibirProdutos(lista) {
+  const container = document.getElementById('productList');
+  container.innerHTML = '';
+
+  lista.forEach(prod => {
+    const card = document.createElement('div');
+    card.classList.add('produto');
+
+    const img = document.createElement('img');
+    img.src = prod.imagens[0];
+    img.alt = prod.nome;
+    img.addEventListener('click', () => abrirModalImagem(prod));
+
+    const nome = document.createElement('h3');
+    nome.textContent = prod.nome;
+
+    const preco = document.createElement('p');
+    preco.textContent = `R$ ${prod.preco.toFixed(2)}`;
+
+    const desc = document.createElement('p');
+    desc.textContent = prod.descricao;
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Adicionar ao Carrinho';
+    btn.addEventListener('click', () => adicionarAoCarrinho(prod));
+
+    card.append(img, nome, preco, desc, btn);
+    container.appendChild(card);
   });
 }
 
-function filterProducts(category) {
-  if (category === 'destaques') {
-    displayProducts(products.filter(p => p.destaque));
+function abrirModalImagem(prod) {
+  imagensProduto = prod.imagens;
+  imagemAtual = 0;
+  document.getElementById('modalImage').src = imagensProduto[imagemAtual];
+  document.getElementById('imageModal').style.display = 'flex';
+}
+
+document.getElementById('prevImage').onclick = () => {
+  if (imagemAtual > 0) imagemAtual--;
+  atualizarImagemModal();
+};
+document.getElementById('nextImage').onclick = () => {
+  if (imagemAtual < imagensProduto.length - 1) imagemAtual++;
+  atualizarImagemModal();
+};
+document.getElementById('closeImageModal').onclick = () => {
+  document.getElementById('imageModal').style.display = 'none';
+};
+
+function atualizarImagemModal() {
+  document.getElementById('modalImage').src = imagensProduto[imagemAtual];
+}
+
+function adicionarAoCarrinho(prod) {
+  const itemExistente = carrinho.find(p => p.id === prod.id);
+  if (itemExistente) {
+    itemExistente.quantidade++;
   } else {
-    displayProducts(products.filter(p => p.categoria === category));
+    carrinho.push({ ...prod, quantidade: 1 });
   }
+
+  mostrarNotificacao();
 }
 
-function searchProducts() {
-  const term = document.getElementById('search').value.toLowerCase();
-  const results = products.filter(p => p.nome.toLowerCase().includes(term) || p.id.toString() === term);
-  const suggestionBox = document.getElementById('search-suggestions');
-  suggestionBox.innerHTML = '';
-  results.forEach(r => {
-    const div = document.createElement('div');
-    div.textContent = r.nome;
-    div.onclick = () => {
-      displayProducts([r]);
-      suggestionBox.style.display = 'none';
-    };
-    suggestionBox.appendChild(div);
+function mostrarNotificacao() {
+  const aviso = document.getElementById('notification');
+  aviso.classList.remove('hidden');
+  setTimeout(() => aviso.classList.add('hidden'), 2000);
+}
+
+function atualizarCarrinho() {
+  const lista = document.getElementById('cartItems');
+  const total = document.getElementById('cartTotal');
+  lista.innerHTML = '';
+
+  let precoTotal = 0;
+
+  carrinho.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <strong>${item.nome}</strong> - ID: ${item.id} - Qtd: ${item.quantidade} - Unit: R$${item.preco.toFixed(2)}
+      ${item.categoria === 'kits' ? `<br><em>${item.descricao}</em>` : ''}
+      <button onclick="removerDoCarrinho(${item.id})">Remover</button>
+    `;
+    precoTotal += item.preco * item.quantidade;
+    lista.appendChild(li);
   });
-  suggestionBox.style.display = results.length ? 'block' : 'none';
+
+  total.textContent = `Total: R$ ${precoTotal.toFixed(2)}`;
 }
 
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('#search')) {
-    document.getElementById('search-suggestions').style.display = 'none';
+function removerDoCarrinho(id) {
+  carrinho = carrinho.filter(p => p.id !== id);
+  atualizarCarrinho();
+}
+
+document.getElementById('openCart').onclick = () => {
+  atualizarCarrinho();
+  document.getElementById('cartModal').style.display = 'flex';
+};
+document.getElementById('closeCart').onclick = () => {
+  document.getElementById('cartModal').style.display = 'none';
+};
+
+document.getElementById('applyCupom').onclick = () => {
+  const cupom = document.getElementById('cupomInput').value.trim().toUpperCase();
+  if (cupom === 'DESCONTO10') {
+    carrinho = carrinho.map(p => ({ ...p, preco: p.preco * 0.9 }));
+    atualizarCarrinho();
+    alert('Cupom aplicado com sucesso!');
+  } else {
+    alert('Cupom inválido.');
+  }
+};
+
+document.getElementById('finalizarCompra').onclick = () => {
+  let mensagem = 'Olá! Quero agendar minha festa com os seguintes produtos:\n\n';
+  carrinho.forEach(p => {
+    mensagem += `➥ ${p.nome} | ID: ${p.id} | Qtd: ${p.quantidade}`;
+    if (p.categoria === 'kits') mensagem += ` | ${p.descricao}`;
+    mensagem += '\n';
+  });
+  mensagem += '\nPor favor, me explique como funciona o agendamento.';
+
+  const url = `https://wa.me/+558189025672?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+};
+
+document.querySelectorAll('.category-btn').forEach(btn => {
+  btn.onclick = () => {
+    const cat = btn.getAttribute('data-category');
+    if (cat === 'destaques') {
+      const destaques = produtos.filter(p => p.destaque);
+      exibirProdutos(destaques);
+    } else {
+      const filtrados = produtos.filter(p => p.categoria === cat);
+      exibirProdutos(filtrados);
+    }
+  };
+});
+
+document.getElementById('searchBar').addEventListener('input', e => {
+  const texto = e.target.value.toLowerCase();
+  const sugestoes = produtos.filter(p =>
+    p.nome.toLowerCase().includes(texto) || String(p.id).includes(texto)
+  );
+  const lista = document.getElementById('suggestions');
+  lista.innerHTML = '';
+  sugestoes.slice(0, 5).forEach(p => {
+    const li = document.createElement('li');
+    li.textContent = p.nome;
+    li.onclick = () => exibirProdutos([p]);
+    lista.appendChild(li);
+  });
+});
+
+carregarProdutos();
+
+const searchInput = document.getElementById('searchBar');
+const suggestions = document.getElementById('suggestions');
+
+// Esconde sugestões se o campo estiver vazio
+searchInput.addEventListener('input', () => {
+  if (searchInput.value.trim() === '') {
+    suggestions.style.display = 'none';
+  } else {
+    suggestions.style.display = 'block';
   }
 });
 
-function addToCart(id) {
-  const prod = products.find(p => p.id === id);
-  const existing = cart.find(item => item.id === id);
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({ ...prod, qty: 1 });
+// Esconde sugestões ao clicar em um item
+suggestions.addEventListener('click', (e) => {
+  if (e.target.tagName === 'LI') {
+    searchInput.value = e.target.textContent;
+    suggestions.style.display = 'none';
   }
-  showNotification(`${prod.nome} foi adicionado ao carrinho.`);
-  updateCart();
-}
+});
 
-function updateCart() {
-  const items = document.getElementById('cart-items');
-  items.innerHTML = '';
-  let total = 0;
-  cart.forEach(item => {
-    total += item.preco * item.qty;
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <strong>${item.nome}</strong><br>
-      ID: ${item.id} | Qtd: ${item.qty} | Valor: R$${item.preco.toFixed(2)}<br>
-      ${item.categoria === 'kits' ? `<em>${item.descricao}</em><br>` : ''}
-      <button onclick="removeFromCart(${item.id})">Remover</button>
-      <hr>
-    `;
-    items.appendChild(div);
-  });
-  const discount = getDiscount();
-  document.getElementById('cart-total').textContent = `Total: R$ ${(total - discount).toFixed(2)}`;
-}
-
-function removeFromCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  updateCart();
-}
-
-function getDiscount() {
-  const coupon = document.getElementById('coupon').value;
-  if (coupon === 'DESCONTO10') {
-    return cart.reduce((sum, item) => sum + item.preco * item.qty, 0) * 0.1;
+// Esconde ao clicar fora
+document.addEventListener('click', (e) => {
+  if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
+    suggestions.style.display = 'none';
   }
-  return 0;
-}
+});
 
-function checkout() {
-  if (!cart.length) return;
-  let msg = '*Pedido Jocelia Festa*\n\n';
-  cart.forEach(item => {
-    msg += `ID: ${item.id} | Qtd: ${item.qty} - ${item.nome}\n`;
-    if (item.categoria === 'kits') msg += `Descrição: ${item.descricao}\n`;
-    msg += '\n';
-  });
-  const total = cart.reduce((sum, item) => sum + item.preco * item.qty, 0);
-  const discount = getDiscount();
-  msg += `Total com desconto: R$ ${(total - discount).toFixed(2)}\n`;
-  msg += '\n*Envie esta mensagem para nossa atendente agendar e explicar como funciona!*';
-  const whatsappURL = `https://wa.me/5581999999999?text=${encodeURIComponent(msg)}`;
-  window.open(whatsappURL, '_blank');
-}
 
-function showNotification(message) {
-  const box = document.getElementById('notification');
-  box.textContent = message;
-  box.classList.remove('hidden');
-  setTimeout(() => box.classList.add('hidden'), 3000);
-}
 
-function openModal(productId) {
-  const product = products.find(p => p.id === productId);
-  currentImages = product.imagens;
-  currentImageIndex = 0;
-  document.getElementById('modal-img').src = currentImages[0];
-  document.getElementById('modal').classList.remove('hidden');
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
-}
-
-function prevImage() {
-  if (currentImages.length > 0) {
-    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-    document.getElementById('modal-img').src = currentImages[currentImageIndex];
-  }
-}
-
-function nextImage() {
-  if (currentImages.length > 0) {
-    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-    document.getElementById('modal-img').src = currentImages[currentImageIndex];
-  }
-}
