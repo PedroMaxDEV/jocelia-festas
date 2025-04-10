@@ -150,7 +150,8 @@ document.getElementById('finalizarCompra').onclick = () => {
   mensagem += '\nSolicito atendimento para agendar com a atendente.';
 
   const url = `https://wa.me/+558189025672?text=${encodeURIComponent(mensagem)}`;
-  window.open(url, '_blank');
+  window.location.href = url;
+
 };
 
 document.querySelectorAll('.category-btn').forEach(btn => {
