@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "nome": "Kit Futebol",
-    "preco": 59.90,
+    "nome": "Kit Corinthias",
+    "preco": 160,
     "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
     "imagens": ["img/KIT/futebol.png", "img/KIT/futebol1.png"],
@@ -11,8 +11,8 @@
   {
     "id": 2,
     "nome": "Painel do 3 Palavrinhas",
-    "preco": 9.99,
-    "descricao": "Incluso só a capa do painel.",
+    "preco": 50,
+    "descricao": "Painel de 1.50m + Capa sublimada.",
     "categoria": "Paineis",
     "imagens": ["img/PAINEIS/3palavrinhas.jpg"],
     "destaque": false
@@ -21,8 +21,8 @@
   {
     "id": 3,
     "nome": "Painel do Tik Tok",
-    "preco": 9.99,
-    "descricao": "Incluso só a capa do painel.",
+    "preco": 50,
+    "descricao": "Painel de 1.50m + Capa sublimada.",
     "categoria": "Paineis",
     "imagens": ["img/PAINEIS/tiktok.jpg"],
     "destaque": false
@@ -31,11 +31,32 @@
 {
   "id": 4,
   "nome": "KIT da Magali",
-  "preco": 150,
+  "preco": 160,
   "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
   "categoria": "kits",
   "imagens": ["img/KIT/MAGALI.png"],
   "destaque": true
   
+},
+{
+  "id": 5,
+  "nome": "KIT Abelha",
+  "preco": 160,
+  "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
+  "categoria": "kits",
+  "imagens": ["img/KIT/abelha.jpeg"],
+  "destaque": true
+  
+},
+{
+  "id": 6,
+  "nome": "KIT Abelha",
+  "preco": 160,
+  "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
+  "categoria": "kits",
+  "imagens": ["img/KIT/abelha.jpeg"],
+  "destaque": true
+  
 }
+
 ]
