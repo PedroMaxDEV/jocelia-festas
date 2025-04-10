@@ -70,14 +70,19 @@ function adicionarAoCarrinho(prod) {
   } else {
     carrinho.push({ ...prod, quantidade: 1 });
   }
-
-  mostrarNotificacao();
+  mostrarNotificacao(`Produto "${prod.nome}" adicionado ao carrinho!`);
 }
 
-function mostrarNotificacao() {
+function mostrarNotificacao(msg = 'Produto adicionado ao carrinho!') {
   const aviso = document.getElementById('notification');
+  aviso.textContent = msg;
   aviso.classList.remove('hidden');
-  setTimeout(() => aviso.classList.add('hidden'), 2000);
+  aviso.style.opacity = '1';
+
+  setTimeout(() => {
+    aviso.style.opacity = '0';
+    setTimeout(() => aviso.classList.add('hidden'), 300);
+  }, 2000);
 }
 
 function atualizarCarrinho() {
@@ -89,12 +94,13 @@ function atualizarCarrinho() {
 
   carrinho.forEach(item => {
     const li = document.createElement('li');
+    const itemTotal = item.preco * item.quantidade;
+    precoTotal += itemTotal;
     li.innerHTML = `
-      <strong>${item.nome}</strong> - ID: ${item.id} - Qtd: ${item.quantidade} - Unit: R$${item.preco.toFixed(2)}
+      <strong>${item.nome}</strong> - ID: ${item.id} - Qtd: ${item.quantidade} - Unit: R$${item.preco.toFixed(2)} - Total: R$${itemTotal.toFixed(2)}
       ${item.categoria === 'kits' ? `<br><em>${item.descricao}</em>` : ''}
       <button onclick="removerDoCarrinho(${item.id})">Remover</button>
     `;
-    precoTotal += item.preco * item.quantidade;
     lista.appendChild(li);
   });
 
@@ -126,13 +132,22 @@ document.getElementById('applyCupom').onclick = () => {
 };
 
 document.getElementById('finalizarCompra').onclick = () => {
-  let mensagem = 'Olá! Quero agendar minha festa com os seguintes produtos:\n\n';
+  const dataFesta = prompt('Digite a data da festa (Ex: 10/05/2025):');
+  if (!dataFesta) return;
+
+  let mensagem = `Olá! Meu nome é ${nomeCliente || 'Cliente'} e quero agendar minha festa com os seguintes produtos:\n\n`;
+  let totalGeral = 0;
+
   carrinho.forEach(p => {
-    mensagem += `➥ ${p.nome} | ID: ${p.id} | Qtd: ${p.quantidade}`;
+    const totalItem = p.preco * p.quantidade;
+    totalGeral += totalItem;
+    mensagem += `➥ ${p.nome} | ID: ${p.id} | Qtd: ${p.quantidade} | Unit: R$${p.preco.toFixed(2)} | Total: R$${totalItem.toFixed(2)}`;
     if (p.categoria === 'kits') mensagem += ` | ${p.descricao}`;
     mensagem += '\n';
   });
-  mensagem += '\nPor favor, me explique como funciona o agendamento.';
+  mensagem += `\nTotal geral: R$ ${totalGeral.toFixed(2)}\n`;
+  mensagem += `Data da festa: ${dataFesta}\n`;
+  mensagem += '\nSolicito atendimento para agendar com a atendente.';
 
   const url = `https://wa.me/+558189025672?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
@@ -168,10 +183,10 @@ document.getElementById('searchBar').addEventListener('input', e => {
 
 carregarProdutos();
 
+// Sugestão e ocultar sugestões quando clicar fora
 const searchInput = document.getElementById('searchBar');
 const suggestions = document.getElementById('suggestions');
 
-// Esconde sugestões se o campo estiver vazio
 searchInput.addEventListener('input', () => {
   if (searchInput.value.trim() === '') {
     suggestions.style.display = 'none';
@@ -180,7 +195,6 @@ searchInput.addEventListener('input', () => {
   }
 });
 
-// Esconde sugestões ao clicar em um item
 suggestions.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
     searchInput.value = e.target.textContent;
@@ -188,12 +202,18 @@ suggestions.addEventListener('click', (e) => {
   }
 });
 
-// Esconde ao clicar fora
 document.addEventListener('click', (e) => {
   if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
     suggestions.style.display = 'none';
   }
 });
 
-
-
+// Nome do cliente salvo localmente
+let nomeCliente = localStorage.getItem('nomeCliente');
+if (!nomeCliente) {
+  nomeCliente = prompt('Bem-vindo! Qual o seu nome?');
+  if (nomeCliente) {
+    localStorage.setItem('nomeCliente', nomeCliente);
+    alert(`Olá, ${nomeCliente}! Explore nossos produtos 😄`);
+  }
+}
