@@ -5,21 +5,21 @@
     "preco": 59.90,
     "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
-    "imagens": ["img/futebol.png", "img/futebol1.png"],
+    "imagens": ["img/Kits/futebol.png", "img/kits/futebol1.png"],
     "destaque": true
   },
   {
     "id": 2,
-    "nome": "Bexigas Azul",
+    "nome": "Painel do 3 Palavrinhas",
     "preco": 9.99,
-    "descricao": "e azul ne kkk",
-    "categoria": "itens avulsos",
-    "imagens": ["img/produto3.jpg"],
+    "descricao": "Incluso só a capa do painel",
+    "categoria": "Paineis",
+    "imagens": ["img/paineis/3palavrinhas.jpg"],
     "destaque": false
     
   },
   {
-    "id": 1,
+    "id": 3,
     "nome": "Painel do Tik Tok",
     "preco": 9.99,
     "descricao": "Incluso só a capa do painel",

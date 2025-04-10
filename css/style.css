@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #63d2bf;
   color: #000;
 }
 
 header {
-  background-color: #63d2bf;
+  background-color: #ef4896;
   padding: 10px;
   text-align: center;
   position: sticky;
@@ -16,8 +17,12 @@ header {
 }
 
 header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px; /* você pode ajustar esse valor */
+  letter-spacing: 4px; /* aqui você controla o espaçamento */
+  text-transform: uppercase; /* opcional: deixa tudo em MAIÚSCULO */
   margin: 0;
-  color: #000;
+  color: #ffff00;
 }
 
 #searchBar {
@@ -211,7 +216,7 @@ main {
   bottom: 20px;
   right: 20px;
   background-color: #ef4896;
-  color: white;
+  color: #ffff00;
   border: none;
   padding: 12px 20px;
   border-radius: 12px;
@@ -328,4 +333,38 @@ main {
     padding: 14px 26px;
     font-size: 18px;
   }
+}
+
+.modal-image-content img {
+  max-width: 500px;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.nav-buttons button {
+  background-color: #63d2bf;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.nav-buttons .close {
+  background-color: #ef4896;
+  font-size: 20px;
+  padding: 10px 14px;
 }

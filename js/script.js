@@ -122,7 +122,7 @@ document.getElementById('closeCart').onclick = () => {
 
 document.getElementById('applyCupom').onclick = () => {
   const cupom = document.getElementById('cupomInput').value.trim().toUpperCase();
-  if (cupom === 'DESCONTO10') {
+  if (cupom === '4ANOSJF') {
     carrinho = carrinho.map(p => ({ ...p, preco: p.preco * 0.9 }));
     atualizarCarrinho();
     alert('Cupom aplicado com sucesso!');
@@ -217,3 +217,18 @@ if (!nomeCliente) {
     alert(`Olá, ${nomeCliente}! Explore nossos produtos 😄`);
   }
 }
+
+function closeModal() {
+  document.querySelector('.modal').style.display = 'none';
+}
+
+window.addEventListener('click', function (e) {
+  const modal = document.querySelector('.modal');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+document.getElementById('closeImageBtn').onclick = () => {
+  document.getElementById('imageModal').style.display = 'none';
+};
+
