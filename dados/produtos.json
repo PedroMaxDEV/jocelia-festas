@@ -6,7 +6,7 @@
     "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
     "imagens": ["img/KIT/futebol.png", "img/KIT/futebol1.png"],
-    "destaque": true
+    "destaque": false
   },
   {
     "id": 2,
@@ -35,7 +35,7 @@
   "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
   "categoria": "kits",
   "imagens": ["img/KIT/MAGALI.png"],
-  "destaque": true
+  "destaque": false
   
 },
 {
@@ -45,18 +45,39 @@
   "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
   "categoria": "kits",
   "imagens": ["img/KIT/abelha.jpeg"],
-  "destaque": true
+  "destaque": false
   
 },
 {
   "id": 6,
-  "nome": "KIT Abelha",
-  "preco": 160,
+  "nome": "KIT Basquete",
+  "preco": 100,
   "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
   "categoria": "kits",
-  "imagens": ["img/KIT/abelha.jpeg"],
+  "imagens": ["img/KIT/Basquete.png"],
+  "destaque": false
+  
+},
+{
+  "id": 7,
+  "nome": "KIT Basquete",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/Basquete22.png"],
+  "destaque": false
+  
+},
+{
+  "id": 8,
+  "nome": "KIT 15 Anos",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/15anos.png"],
   "destaque": true
   
 }
+
 
 ]
