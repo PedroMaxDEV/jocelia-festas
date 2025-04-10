@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jocelia Festas</title>  
-    <link rel="stylesheet" href="style.css"> 
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jocelia Festa - Locação e Decoração</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Bem-vindo à Jocelia Festas!</h1>
-        <h2>Decorações & Locações</h2>
-    </header>
+  <header>
+    <h1>Jocelia Festa</h1>
+    <p>Locação e Decoração de Festas</p>
+    <input type="text" id="search" placeholder="Buscar produtos..." />
+    <div id="search-suggestions"></div>
+    <button id="open-cart">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+  </header>
 
+  <main>
     <nav>
-        <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
+      <button class="filter-btn" data-category="destaques">Destaques</button>
+      <button class="filter-btn" data-category="kits">Kits</button>
+      <button class="filter-btn" data-category="decorações">Decorações</button>
+      <button class="filter-btn" data-category="itens avulsos">Itens Avulsos</button>
     </nav>
 
-    <section id="sobre">
-        <h3>Quem Somos</h3>
-        <p>Somos especialistas em decorações e locações para festas, trazendo cor e alegria para seu evento!</p>
-    </section>
+    <section id="product-list"></section>
+  </main>
 
-    <section id="servicos">
-        <h3>Nossos Serviços</h3>
-        <ul>
-            <li>Decoração temática</li>
-            <li>Kit pegue e monte</li>
-            <li>JF Artes</li>
-        </ul>
-    </section>
+  <div id="cart" class="hidden">
+    <button id="close-cart">Fechar</button>
+    <h2>Carrinho</h2>
+    <div id="cart-items"></div>
+    <input type="text" id="coupon" placeholder="Cupom de desconto" />
+    <p>Total: R$ <span id="total">0.00</span></p>
+    <button id="checkout">Finalizar Compra no WhatsApp</button>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Jocelia Festas - Todos os direitos reservados.</p>
-    </footer>
+  <div id="modal" class="hidden">
+    <button id="close-modal">✖</button>
+    <button id="prev-image">◀</button>
+    <img id="modal-image" src="" alt="Imagem ampliada" />
+    <button id="next-image">▶</button>
+  </div>
+
+  <div id="notification" class="hidden">Produto adicionado ao carrinho!</div>
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>
