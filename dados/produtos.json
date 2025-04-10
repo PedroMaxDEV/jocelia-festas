@@ -12,7 +12,7 @@
     "id": 2,
     "nome": "Painel do 3 Palavrinhas",
     "preco": 9.99,
-    "descricao": "Incluso só a capa do painel",
+    "descricao": "Incluso só a capa do painel.",
     "categoria": "Paineis",
     "imagens": ["img/PAINEIS/3palavrinhas.jpg"],
     "destaque": false
@@ -22,10 +22,20 @@
     "id": 3,
     "nome": "Painel do Tik Tok",
     "preco": 9.99,
-    "descricao": "Incluso só a capa do painel",
+    "descricao": "Incluso só a capa do painel.",
     "categoria": "Paineis",
     "imagens": ["img/PAINEIS/tiktok.jpg"],
     "destaque": false
     
-  }
+  },
+{
+  "id": 4,
+  "nome": "KIT da Magali",
+  "preco": 150,
+  "descricao": "Inclui: 3x mesas cilindro, painel redondo com capa, escadinha, nome da criança, displays da magali, 3x bandejas, suporte para bola, tapete verde, bolo fake e outros itens decorativos do tema.",
+  "categoria": "kits",
+  "imagens": ["img/KIT/MAGALI.png"],
+  "destaque": true
+  
+}
 ]
