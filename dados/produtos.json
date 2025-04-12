@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nome": "Kit Corinthians",
+    "nome": "Kit Safari",
     "preco": 160,
     "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
@@ -170,7 +170,7 @@
 },
 {
   "id": 18,
-  "nome": "KIT Rose Gold",
+  "nome": "KIT da Magali",
   "preco": 100,
   "descricao": " ",
   "categoria": "kits",
@@ -414,7 +414,7 @@
   "preco": 50,
   "descricao": "Painel de 1.50m + Capa sublimada.",
   "categoria": "Paineis",
-  "imagens": ["img/PAINEIS/listrado.jpg"],
+  "imagens": ["img/PAINEIS/safari.jpg"],
   "destaque": false
   
 },
