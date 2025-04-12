@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "nome": "Kit Corinthias",
+    "nome": "Kit Corinthians",
     "preco": 160,
     "descricao": "Inclui enfeites e painel do tema futebol.",
     "categoria": "kits",
-    "imagens": ["img/KIT/futebol.png", "img/KIT/futebol1.png"],
+    "imagens": ["img/KIT/safari.png"],
     "destaque": false
   },
   {
@@ -77,7 +77,358 @@
   "imagens": ["img/KIT/15anos.png"],
   "destaque": true
   
+},
+{
+  "id": 9,
+  "nome": "KIT Batizado",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/batizado.png"],
+  "destaque": true
+  
+},
+{
+  "id": 10,
+  "nome": "KIT Cantinho do Café",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/cafe.jpeg"],
+  "destaque": true
+  
+},
+{
+  "id": 11,
+  "nome": "KIT Rústico",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/rustico.png"],
+  "destaque": false
+  
+},
+{
+  "id": 12,
+  "nome": "KIT Chá de Bebê",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/chabebe.png"],
+  "destaque": false
+  
+},
+{
+  "id": 13,
+  "nome": "KIT Corinthians",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/corintians.png"],
+  "destaque": false
+  
+},
+{
+  "id": 14,
+  "nome": "KIT Corinthians",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/corintians0.png"],
+  "destaque": false
+  
+},
+{
+  "id": 15,
+  "nome": "KIT Corinthians",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/corintians1.png"],
+  "destaque": false
+  
+},
+{
+  "id": 16,
+  "nome": "KIT Corinthians",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/corintians2.png"],
+  "destaque": false
+  
+},
+{
+  "id": 17,
+  "nome": "KIT Rose Gold",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/gold.png"],
+  "destaque": false
+  
+},
+{
+  "id": 18,
+  "nome": "KIT Rose Gold",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/magali1.png"],
+  "destaque": false
+  
+},
+{
+  "id": 19,
+  "nome": "KIT Flamengo",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/flamengo.png"],
+  "destaque": false
+  
+},
+{
+  "id": 20,
+  "nome": "KIT Flamengo",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/flamengo2.png"],
+  "destaque": false
+  
+},
+{
+  "id": 21,
+  "nome": "KIT Flamengo",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/flamengo3.png"],
+  "destaque": false
+  
+},
+{
+  "id": 22,
+  "nome": "KIT Flamengo",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/flamengo4.png"],
+  "destaque": false
+  
+},
+{
+  "id": 23,
+  "nome": "KIT Flamengo",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/futebol1.png"],
+  "destaque": false
+  
+},
+{
+  "id": 24,
+  "nome": "Painel 15 Anos",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/15anos.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 25,
+  "nome": "Painel Batizado",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/batizado.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 26,
+  "nome": "Painel Buteco",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/buteco.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 27,
+  "nome": "Painel Chá de panela",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/chadepanela.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 28,
+  "nome": "Painel Coração",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/corção.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 29,
+  "nome": "Painel Encanto",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/encanto.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 30,
+  "nome": "Painel de folhas",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/folhas.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 31,
+  "nome": "Painel Futebol",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/futebol.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 32,
+  "nome": "Painel Futebol",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/futebol1.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 33,
+  "nome": "Painel Gratidão",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/gratidao.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 34,
+  "nome": "Painel Listrado com flores",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/listrado.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 35,
+  "nome": "Painel Chá de Bebê",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/meninomenina.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 36,
+  "nome": "Painel da Mine rosa",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/mine.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 37,
+  "nome": "Painel dia dos Pais",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/pai1.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 38,
+  "nome": "Painel de Praia",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/praia.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 39,
+  "nome": "Painel Preto com flores",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/pretor.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 40,
+  "nome": "Painel Rei Leão",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/reileao.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 41,
+  "nome": "Painel Rosa com flores",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/rosaf.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 42,
+  "nome": "Painel Safari",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/listrado.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 43,
+  "nome": "Painel Unicornio",
+  "preco": 50,
+  "descricao": "Painel de 1.50m + Capa sublimada.",
+  "categoria": "Paineis",
+  "imagens": ["img/PAINEIS/unicornio.jpg"],
+  "destaque": false
+  
 }
+
 
 
 ]
