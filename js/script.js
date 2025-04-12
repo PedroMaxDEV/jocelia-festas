@@ -6,7 +6,7 @@ let imagensProduto = [];
 async function carregarProdutos() {
   const res = await fetch('dados/produtos.json');
   produtos = await res.json();
-  exibirProdutos(produtos);
+  exibirProdutos(produtos.filter(p => p.destaque)); // Exibir apenas os destaques ao carregar
 }
 
 function exibirProdutos(lista) {
@@ -151,33 +151,48 @@ document.getElementById('finalizarCompra').onclick = () => {
 
   const url = `https://wa.me/+558189025672?text=${encodeURIComponent(mensagem)}`;
   window.location.href = url;
-
 };
 
 document.querySelectorAll('.category-btn').forEach(btn => {
   btn.onclick = () => {
     const cat = btn.getAttribute('data-category');
-    if (cat === 'destaques') {
+    if (cat === 'todos') {
+      exibirProdutos(produtos); // Exibe todos os produtos
+    } else if (cat === 'destaques') {
       const destaques = produtos.filter(p => p.destaque);
-      exibirProdutos(destaques);
+      exibirProdutos(destaques); // Exibe apenas os produtos em destaque
     } else {
       const filtrados = produtos.filter(p => p.categoria === cat);
-      exibirProdutos(filtrados);
+      exibirProdutos(filtrados); // Exibe produtos por categoria
     }
   };
 });
 
 document.getElementById('searchBar').addEventListener('input', e => {
   const texto = e.target.value.toLowerCase();
-  const sugestoes = produtos.filter(p =>
-    p.nome.toLowerCase().includes(texto) || String(p.id).includes(texto)
-  );
+  const sugestoesAgrupadas = {};
+
+  // Agrupar os produtos pelo nome
+  produtos.forEach(prod => {
+    const nomeProduto = prod.nome.toLowerCase();
+    if (nomeProduto.includes(texto)) {
+      if (!sugestoesAgrupadas[nomeProduto]) {
+        sugestoesAgrupadas[nomeProduto] = [];
+      }
+      sugestoesAgrupadas[nomeProduto].push(prod);
+    }
+  });
+
+  // Criar lista de sugestões
   const lista = document.getElementById('suggestions');
   lista.innerHTML = '';
-  sugestoes.slice(0, 5).forEach(p => {
+
+  // Exibir até 5 sugestões agrupadas
+  Object.keys(sugestoesAgrupadas).slice(0, 5).forEach(nome => {
+    const produtosGrupo = sugestoesAgrupadas[nome];
     const li = document.createElement('li');
-    li.textContent = p.nome;
-    li.onclick = () => exibirProdutos([p]);
+    li.textContent = `${nome} (${produtosGrupo.length} produtos)`;
+    li.onclick = () => exibirProdutos(produtosGrupo);  // Exibir todos os produtos do grupo
     lista.appendChild(li);
   });
 });
@@ -232,4 +247,3 @@ window.addEventListener('click', function (e) {
 document.getElementById('closeImageBtn').onclick = () => {
   document.getElementById('imageModal').style.display = 'none';
 };
-
