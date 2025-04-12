@@ -18,7 +18,7 @@ function exibirProdutos(lista) {
     card.classList.add('produto');
 
     const img = document.createElement('img');
-    img.src = prod.imagens[0];
+    img.src = `https://pedromaxdev.github.io/jocelia-festas/${prod.imagens[0]}`; // Substituindo o caminho da imagem pelo link completo
     img.alt = prod.nome;
     img.addEventListener('click', () => abrirModalImagem(prod));
 
@@ -43,7 +43,7 @@ function exibirProdutos(lista) {
 function abrirModalImagem(prod) {
   imagensProduto = prod.imagens;
   imagemAtual = 0;
-  document.getElementById('modalImage').src = imagensProduto[imagemAtual];
+  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`; // Substituindo o caminho da imagem pelo link completo
   document.getElementById('imageModal').style.display = 'flex';
 }
 
@@ -60,7 +60,7 @@ document.getElementById('closeImageModal').onclick = () => {
 };
 
 function atualizarImagemModal() {
-  document.getElementById('modalImage').src = imagensProduto[imagemAtual];
+  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`; // Substituindo o caminho da imagem pelo link completo
 }
 
 function adicionarAoCarrinho(prod) {
@@ -143,6 +143,11 @@ document.getElementById('finalizarCompra').onclick = () => {
     totalGeral += totalItem;
     mensagem += `➥ ${p.nome} | ID: ${p.id} | Qtd: ${p.quantidade} | Unit: R$${p.preco.toFixed(2)} | Total: R$${totalItem.toFixed(2)}`;
     if (p.categoria === 'kits') mensagem += ` | ${p.descricao}`;
+    // Adicionando a URL completa da imagem
+    if (p.imagens && p.imagens[0]) {
+      const imagemUrl = `https://pedromaxdev.github.io/jocelia-festas/${p.imagens[0]}`;
+      mensagem += ` | Imagem: ${imagemUrl}`;
+    }
     mensagem += '\n';
   });
   mensagem += `\nTotal geral: R$ ${totalGeral.toFixed(2)}\n`;
