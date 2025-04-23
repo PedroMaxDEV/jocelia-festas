@@ -427,6 +427,16 @@
   "imagens": ["img/PAINEIS/unicornio.jpg"],
   "destaque": false
   
+},
+{
+  "id": 44,
+  "nome": "Mesa Sextavada branca ",
+  "preco": 50,
+  "descricao": "Cor: Branca.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesasextavadab.jpeg"],
+  "destaque": false
+  
 }
 
 
