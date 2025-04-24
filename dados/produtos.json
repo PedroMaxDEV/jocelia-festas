@@ -430,15 +430,74 @@
 },
 {
   "id": 44,
-  "nome": "Mesa Sextavada branca ",
-  "preco": 50,
-  "descricao": "Cor: Branca.",
+  "nome": "KIT Mesa Sextavada",
+  "preco": 45,
+  "descricao": "Cor: Branca. Para alugar uma mesa unitária, entre em contato com o atendimento.",
   "categoria": "Mesas",
   "imagens": ["img/MESAS/mesasextavadab.jpeg"],
   "destaque": false
   
+},
+{
+  "id": 45,
+  "nome": "KIT Mesa Sextavada",
+  "preco": 45,
+  "descricao": "Cor: Preta. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesasextavadap.jpeg"],
+  "destaque": false
+  
+},
+{
+  "id": 46,
+  "nome": " KIT Mesa Sextavada",
+  "preco": 45,
+  "descricao": "Cor: Amadeirada. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesasextavadam.jpeg"],
+  "destaque": false
+  
+},
+{
+  "id": 47,
+  "nome": "KIT Mesa Quadrada",
+  "preco": 45,
+  "descricao": "Cor: Branca. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesaquadradab.jpeg"],
+  "destaque": false
+  
+},
+{
+  "id": 48,
+  "nome": "KIT Mesa Quadrada",
+  "preco": 45,
+  "descricao": "Cor: Preta. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesaquadradap.jpeg"],
+  "destaque": false
+  
+},
+{
+  "id": 49,
+  "nome": "KIT Mesa Quadrada",
+  "preco": 45,
+  "descricao": "Cor: Amadeirada. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesaquadradam.jpeg"],
+  "destaque": false
+  
+},
+{
+  "id": 50,
+  "nome": "KIT Mesa cilindrica",
+  "preco": 45,
+  "descricao": "Temos todas as cores. Para alugar uma mesa unitária, entre em contato com o atendimento.",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/mesacilindro.jpeg"],
+  "destaque": false
+  
 }
-
 
 
 ]
