@@ -497,7 +497,68 @@
   "imagens": ["img/MESAS/mesacilindro.jpeg"],
   "destaque": false
   
+},
+{
+  "id": 51,
+  "nome": "Mesa",
+  "preco": 45,
+  "descricao": "",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/51.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 52,
+  "nome": "Mesas Cilindro com detalhes",
+  "preco": 45,
+  "descricao": "",
+  "categoria": "Mesas",
+  "imagens": ["img/MESAS/52.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 53,
+  "nome": "KIT Homen Aranha ",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/53.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 54,
+  "nome": "KIT Rei leão",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/54.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 55,
+  "nome": "KIT Rei leão",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/55.jpg"],
+  "destaque": false
+  
+},
+{
+  "id": 56,
+  "nome": "KIT Baby Looney Tunes",
+  "preco": 100,
+  "descricao": " ",
+  "categoria": "kits",
+  "imagens": ["img/KIT/56.jpg"],
+  "destaque": false
+  
 }
+
 
 
 ]
