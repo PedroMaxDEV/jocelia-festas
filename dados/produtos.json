@@ -1301,7 +1301,7 @@
 {
   "id": 133,
   "nome": "Ferrari",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/133.jpg"],
@@ -1311,7 +1311,7 @@
 {
   "id": 134,
   "nome": "Rainha",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/134.jpg"],
@@ -1321,7 +1321,7 @@
 {
   "id": 135,
   "nome": "Encontro de casais",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/135.jpg"],
@@ -1331,7 +1331,7 @@
 {
   "id": 136,
   "nome": "Encontro de casais",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/136.jpg"],
@@ -1341,7 +1341,7 @@
 {
   "id": 137,
   "nome": "LOVE",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/137.jpg"],
@@ -1351,7 +1351,7 @@
 {
   "id": 138,
   "nome": "São João",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/138.jpg"],
@@ -1361,7 +1361,7 @@
 {
   "id": 139,
   "nome": "Jardim de borboletas",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/139.jpg"],
@@ -1371,7 +1371,7 @@
 {
   "id": 140,
   "nome": "unicornio",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/140.jpg"],
@@ -1381,7 +1381,7 @@
 {
   "id": 141,
   "nome": "Masha",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/141.jpg"],
@@ -1391,7 +1391,7 @@
 {
   "id": 142,
   "nome": "Tema Roça",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/142.jpg"],
@@ -1401,7 +1401,7 @@
 {
   "id": 143,
   "nome": "Tema Girasol",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/143.jpg"],
@@ -1411,7 +1411,7 @@
 {
   "id": 144,
   "nome": "Fundo do mar",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/144.jpg"],
@@ -1421,7 +1421,7 @@
 {
   "id": 145,
   "nome": "Encontron de mulheres",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/145.jpg"],
@@ -1431,7 +1431,7 @@
 {
   "id": 146,
   "nome": "Pool Party",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/146.jpg"],
@@ -1441,7 +1441,7 @@
 {
   "id": 147,
   "nome": "Gatinha Marrie",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/147.jpg"],
@@ -1451,7 +1451,7 @@
 {
   "id": 148,
   "nome": "LOL Suprise",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/148.jpg"],
@@ -1461,7 +1461,7 @@
 {
   "id": 149,
   "nome": "Tema 15 Anos Paris",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/149.jpg"],
@@ -1471,7 +1471,7 @@
 {
   "id": 150,
   "nome": "Casamento",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/150.jpg"],
@@ -1481,7 +1481,7 @@
 {
   "id": 152,
   "nome": "Pepa Pig",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/152.jpg"],
@@ -1491,7 +1491,7 @@
 {
   "id": 153,
   "nome": "Sonic",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/153.jpg"],
@@ -1501,7 +1501,7 @@
 {
   "id": 154,
   "nome": "Dia das Mães",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/154.jpg"],
@@ -1511,7 +1511,7 @@
 {
   "id": 155,
   "nome": "Tardezinha",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/155.jpg"],
