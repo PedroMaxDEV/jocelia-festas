@@ -1291,7 +1291,7 @@
 {
   "id": 132,
   "nome": "Circo",
-  "preco": null,
+  "preco": 0,
   "descricao": "O valor da decoração com montagem será combinado diretamente com o atendente. ",
   "categoria": "Decorações",
   "imagens": ["img/DECORACOES/132.jpg"],
