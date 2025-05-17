@@ -1663,7 +1663,7 @@
   "nome": "Trono Para decorção",
   "preco": 35,
   "descricao": "",
-  "categoria": "Paineis",
+  "categoria": "itens avulsos",
   "imagens": ["img/AVULSOS/170.jpg"],
   "destaque": false
   
@@ -1673,7 +1673,7 @@
   "nome": "Trono Para decorção",
   "preco": 35,
   "descricao": "",
-  "categoria": "Paineis",
+  "categoria": "itens avulsos",
   "imagens": ["img/AVULSOS/171.jpg"],
   "destaque": false
   
@@ -1683,7 +1683,7 @@
   "nome": "Jarros",
   "preco": 35,
   "descricao": "",
-  "categoria": "Paineis",
+  "categoria": "itens avulsos",
   "imagens": ["img/AVULSOS/172.jpg"],
   "destaque": false
 },
@@ -1692,7 +1692,7 @@
   "nome": "Escadinhas para sacolinhas",
   "preco": 20,
   "descricao": "",
-  "categoria": "Paineis",
+  "categoria": "itens avulsos",
   "imagens": ["img/AVULSOS/escadab.jpeg"],
   "destaque": false
   
@@ -1702,7 +1702,7 @@
   "nome": "Escadinhas para sacolinhas",
   "preco": 20,
   "descricao": "",
-  "categoria": "Paineis",
+  "categoria": "itens avulsos",
   "imagens": ["img/AVULSOS/escadinhas.jpeg"],
   "destaque": false
   
