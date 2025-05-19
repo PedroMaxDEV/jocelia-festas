@@ -5,11 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jocelia Festa</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    #welcomeModal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+    }
+
+    #welcomeBox {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: fadeInDown 1s;
+    }
+
+    #welcomeBox input {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #welcomeBox button {
+      background-color: #ef4896;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <div id="welcomeModal">
+    <div id="welcomeBox" class="animate__animated animate__fadeInDown">
+      <h2>Bem-vindo ao site da Jôcelia Festas!</h2>
+      <p>Digite seu nome para continuar:</p>
+      <input type="text" id="userName" placeholder="Seu nome" />
+      <br />
+      <button onclick="enterSite()">Entrar</button>
+    </div>
+  </div>
+
   <header>
     <h1>JOCELIA FESTAS</h1>
-    <input type="text" id="searchBar" placeholder="Buscar produtos ou ID..." />
+    <input type="text" id="searchBar" placeholder="Buscar produtos, ID ou palavras-chave..." />
     <ul id="suggestions"></ul>
     <button id="openCart">🛒 Carrinho</button>
   </header>
@@ -54,6 +107,17 @@
 
   <div id="notification" class="hidden">Produto adicionado ao carrinho!</div>
 
+  <script>
+    function enterSite() {
+      const name = document.getElementById('userName').value.trim();
+      if (name !== '') {
+        localStorage.setItem('visitorName', name);
+        document.getElementById('welcomeModal').style.display = 'none';
+      } else {
+        alert('Por favor, digite seu nome.');
+      }
+    }
+  </script>
 
   <script src="js/script.js"></script>
 </body>
