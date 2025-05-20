@@ -1,4 +1,3 @@
-// script.js atualizado com suporte a tags e ID sem quebrar funcionalidades existentes
 let produtos = [];
 let carrinho = [];
 let imagemAtual = 0;
@@ -7,7 +6,7 @@ let imagensProduto = [];
 async function carregarProdutos() {
   const res = await fetch('dados/produtos.json');
   produtos = await res.json();
-  exibirProdutos(produtos.filter(p => p.destaque));
+  exibirProdutos(produtos.filter(p => p.destaque)); // Exibir apenas os destaques ao carregar
 }
 
 function exibirProdutos(lista) {
@@ -19,7 +18,7 @@ function exibirProdutos(lista) {
     card.classList.add('produto');
 
     const img = document.createElement('img');
-    img.src = `https://pedromaxdev.github.io/jocelia-festas/${prod.imagens[0]}`;
+    img.src = `https://pedromaxdev.github.io/jocelia-festas/${prod.imagens[0]}`; // Substituindo o caminho da imagem pelo link completo
     img.alt = prod.nome;
     img.addEventListener('click', () => abrirModalImagem(prod));
 
@@ -44,7 +43,7 @@ function exibirProdutos(lista) {
 function abrirModalImagem(prod) {
   imagensProduto = prod.imagens;
   imagemAtual = 0;
-  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`;
+  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`; // Substituindo o caminho da imagem pelo link completo
   document.getElementById('imageModal').style.display = 'flex';
 }
 
@@ -61,7 +60,7 @@ document.getElementById('closeImageModal').onclick = () => {
 };
 
 function atualizarImagemModal() {
-  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`;
+  document.getElementById('modalImage').src = `https://pedromaxdev.github.io/jocelia-festas/${imagensProduto[imagemAtual]}`; // Substituindo o caminho da imagem pelo link completo
 }
 
 function adicionarAoCarrinho(prod) {
@@ -79,6 +78,7 @@ function mostrarNotificacao(msg = 'Produto adicionado ao carrinho!') {
   aviso.textContent = msg;
   aviso.classList.remove('hidden');
   aviso.style.opacity = '1';
+
   setTimeout(() => {
     aviso.style.opacity = '0';
     setTimeout(() => aviso.classList.add('hidden'), 300);
@@ -91,6 +91,7 @@ function atualizarCarrinho() {
   lista.innerHTML = '';
 
   let precoTotal = 0;
+
   carrinho.forEach(item => {
     const li = document.createElement('li');
     const itemTotal = item.preco * item.quantidade;
@@ -102,6 +103,7 @@ function atualizarCarrinho() {
     `;
     lista.appendChild(li);
   });
+
   total.textContent = `Total: R$ ${precoTotal.toFixed(2)}`;
 }
 
@@ -132,13 +134,16 @@ document.getElementById('applyCupom').onclick = () => {
 document.getElementById('finalizarCompra').onclick = () => {
   const dataFesta = prompt('Digite a data da festa (Ex: 10/05/2025):');
   if (!dataFesta) return;
+
   let mensagem = `Olá! Meu nome é ${nomeCliente || 'Cliente'} e quero agendar minha festa com os seguintes produtos:\n\n`;
   let totalGeral = 0;
+
   carrinho.forEach(p => {
     const totalItem = p.preco * p.quantidade;
     totalGeral += totalItem;
     mensagem += `➥ ${p.nome} | ID: ${p.id} | Qtd: ${p.quantidade} | Unit: R$${p.preco.toFixed(2)} | Total: R$${totalItem.toFixed(2)}`;
     if (p.categoria === 'kits') mensagem += ` | ${p.descricao}`;
+    // Adicionando a URL completa da imagem
     if (p.imagens && p.imagens[0]) {
       const imagemUrl = `https://pedromaxdev.github.io/jocelia-festas/${p.imagens[0]}`;
       mensagem += ` | Imagem: ${imagemUrl}`;
@@ -148,6 +153,7 @@ document.getElementById('finalizarCompra').onclick = () => {
   mensagem += `\nTotal geral: R$ ${totalGeral.toFixed(2)}\n`;
   mensagem += `Data da festa: ${dataFesta}\n`;
   mensagem += '\nSolicito atendimento para agendar com a atendente.';
+
   const url = `https://wa.me/+558189025672?text=${encodeURIComponent(mensagem)}`;
   window.location.href = url;
 };
@@ -156,48 +162,49 @@ document.querySelectorAll('.category-btn').forEach(btn => {
   btn.onclick = () => {
     const cat = btn.getAttribute('data-category');
     if (cat === 'todos') {
-      exibirProdutos(produtos);
+      exibirProdutos(produtos); // Exibe todos os produtos
     } else if (cat === 'destaques') {
       const destaques = produtos.filter(p => p.destaque);
-      exibirProdutos(destaques);
+      exibirProdutos(destaques); // Exibe apenas os produtos em destaque
     } else {
       const filtrados = produtos.filter(p => p.categoria === cat);
-      exibirProdutos(filtrados);
+      exibirProdutos(filtrados); // Exibe produtos por categoria
     }
   };
 });
 
 document.getElementById('searchBar').addEventListener('input', e => {
   const texto = e.target.value.toLowerCase();
+  const sugestoesAgrupadas = {};
 
-  let resultados;
-  if (texto.startsWith('id:')) {
-    const id = parseInt(texto.replace('id:', '').trim());
-    resultados = produtos.filter(p => p.id === id);
-  } else {
-    resultados = produtos.filter(p => {
-      const nome = p.nome.toLowerCase();
-      const descricao = (p.descricao || '').toLowerCase();
-      const tags = (p.tags || []).join(' ').toLowerCase();
-      return nome.includes(texto) || descricao.includes(texto) || tags.includes(texto);
-    });
-  }
+  // Agrupar os produtos pelo nome
+  produtos.forEach(prod => {
+    const nomeProduto = prod.nome.toLowerCase();
+    if (nomeProduto.includes(texto)) {
+      if (!sugestoesAgrupadas[nomeProduto]) {
+        sugestoesAgrupadas[nomeProduto] = [];
+      }
+      sugestoesAgrupadas[nomeProduto].push(prod);
+    }
+  });
 
-  exibirProdutos(resultados);
+  // Criar lista de sugestões
+  const lista = document.getElementById('suggestions');
+  lista.innerHTML = '';
 
-  const sugestoes = document.getElementById('suggestions');
-  sugestoes.innerHTML = '';
-
-  resultados.slice(0, 5).forEach(p => {
+  // Exibir até 5 sugestões agrupadas
+  Object.keys(sugestoesAgrupadas).slice(0, 5).forEach(nome => {
+    const produtosGrupo = sugestoesAgrupadas[nome];
     const li = document.createElement('li');
-    li.textContent = `${p.nome}`;
-    li.onclick = () => exibirProdutos([p]);
-    sugestoes.appendChild(li);
+    li.textContent = `${nome} (${produtosGrupo.length} produtos)`;
+    li.onclick = () => exibirProdutos(produtosGrupo);  // Exibir todos os produtos do grupo
+    lista.appendChild(li);
   });
 });
 
 carregarProdutos();
 
+// Sugestão e ocultar sugestões quando clicar fora
 const searchInput = document.getElementById('searchBar');
 const suggestions = document.getElementById('suggestions');
 
@@ -222,6 +229,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Nome do cliente salvo localmente
 let nomeCliente = localStorage.getItem('nomeCliente');
 if (!nomeCliente) {
   nomeCliente = prompt('Bem-vindo! Qual o seu nome?');
@@ -230,10 +238,6 @@ if (!nomeCliente) {
     alert(`Olá, ${nomeCliente}! Explore nossos produtos 😄`);
   }
 }
-
-document.getElementById('closeImageBtn').onclick = () => {
-  document.getElementById('imageModal').style.display = 'none';
-};
 
 function closeModal() {
   document.querySelector('.modal').style.display = 'none';
@@ -245,4 +249,6 @@ window.addEventListener('click', function (e) {
     modal.style.display = 'none';
   }
 });
-
+document.getElementById('closeImageBtn').onclick = () => {
+  document.getElementById('imageModal').style.display = 'none';
+};
