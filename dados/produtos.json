@@ -3251,5 +3251,243 @@
       "kits",
       "popular"
     ]
+  },
+{
+    "id": 176,
+    "nome": "Painel Florado com lampadas ",
+    "preco": 50,
+    "descricao": "Painel de 1.50m + Capa sublimada.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/176.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "floral",
+      "casual",
+      "paineis",
+      "lampadas"
+    ]
+  },
+{
+    "id": 177,
+    "nome": "Fundo Rústico",
+    "preco": 50,
+    "descricao": "Fundo sublimado.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/177.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "Classico",
+      "casual",
+      "paineis",
+      "antigo"
+    ]
+  },
+  {
+    "id": 178,
+    "nome": "Painel Neon de Borboleta",
+    "preco": 50,
+    "descricao": "Fundo sublimado.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/178.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "neom",
+      "borboleta",
+      "paineis",
+      "moderno"
+    ]
+  },
+{
+    "id": 179,
+    "nome": "Fundo Gratidão",
+    "preco": 50,
+    "descricao": "Fundo sublimado.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/179.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "floral",
+      "casual",
+      "paineis",
+      "lampadas"
+    ]
+  },
+{
+    "id": 180,
+    "nome": "Fundo Ano novo",
+    "preco": 50,
+    "descricao": "Fundo sublimado.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/180.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "ano novo",
+      "virada de ano",
+      "reveiao",
+      "2026"
+    ]
+  },
+{
+    "id": 181,
+    "nome": "Fundo Roxo",
+    "preco": 50,
+    "descricao": "Fundo sublimado.",
+    "categoria": "Paineis",
+    "imagens": [
+      "img/PAINEIS/181.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "Roxo",
+      "casual",
+      "paineis",
+      "festa"
+    ]
+  },
+{
+    "id": 182,
+    "nome": "Números",
+    "preco": 50,
+    "descricao": "Números para decoração temos de 1 á 10.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/182.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "Número",
+      "decorativos",
+      "aniversário",
+      "1"
+    ]
+  },
+  {
+    "id": 183,
+    "nome": "Luminaria de mesa",
+    "preco": 50,
+    "descricao": "Já com as lampadas inclusas.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/183.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "lampadas",
+      "decorativos",
+      "aniversário",
+      "lampada"
+    ]
+  },
+  {
+    "id": 184,
+    "nome": "Luminaria de madeira com flores",
+    "preco": 50,
+    "descricao": "Iten decorativo de mesa.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/184.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "lampadas",
+      "decorativos",
+      "aniversário",
+      "flores"
+    ]
+  },
+{
+    "id": 185,
+    "nome": "Jarros",
+    "preco": 50,
+    "descricao": "Já com as flores inclusas.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/185.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "jarros",
+      "flores",
+      "aniversário",
+      "casamento"
+    ]
+  },
+  {
+    "id": 186,
+    "nome": "Jarros",
+    "preco": 50,
+    "descricao": "Já com as flores inclusas.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/186.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "jarros",
+      "flores",
+      "aniversário",
+      "casamento"
+    ]
+  },
+  {
+    "id": 187,
+    "nome": "Jarros",
+    "preco": 50,
+    "descricao": "Já com as flores inclusas.",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/187.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "girasol",
+      "flores",
+      "jarros",
+      "flor"
+    ]
+  },
+{
+    "id": 188,
+    "nome": "Coração para dia das mães",
+    "preco": 50,
+    "descricao": "",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/188.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "mãe",
+      "mães",
+      "dia das mães",
+      "mae"
+    ]
+  },
+{
+    "id": 189,
+    "nome": "Coração para dia das mães",
+    "preco": 50,
+    "descricao": "",
+    "categoria": "itens avulsos",
+    "imagens": [
+      "img/AVULSOS/189.jpg"
+    ],
+    "destaque": false,
+    "tags": [
+      "espirito santo",
+      "batizado",
+      "pomba",
+      "paz"
+    ]
   }
 ]

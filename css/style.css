@@ -368,3 +368,27 @@ main {
   font-size: 20px;
   padding: 10px 14px;
 }
+.logo {
+  position: fixed;
+  top: 5px;
+  left: 111px;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 63px;
+  height: auto;
+}
+
+.confete {
+  position: fixed;
+  top: 0px;
+  right: 115px;
+  z-index: 1000;
+}
+
+.confete img {
+  width: 70px;
+  height: auto;
+}
+
