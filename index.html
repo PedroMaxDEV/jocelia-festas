@@ -138,7 +138,7 @@
   function criarConfete() {
     const confete = document.createElement('span');
     confete.classList.add('confetti');
-    const tamanho = Math.floor(Math.random() * 9) + 5;
+    const tamanho = Math.floor(Math.random() * 9) + 4;
     confete.style.width = `${tamanho}px`;
     confete.style.height = `${tamanho}px`;
     confete.style.left = `${Math.random() * 100}%`;
@@ -146,10 +146,10 @@
     confete.style.animationDuration = `${2 + Math.random() * 3}s`;
     confete.style.animationDelay = `${Math.random()}s`;
     container.appendChild(confete);
-    setTimeout(() => confete.remove(), 5000);
+    setTimeout(() => confete.remove(), 50000);
   }
 
-  setInterval(criarConfete, 200);
+  setInterval(criarConfete, 100);
 </script>
 
 </body>
