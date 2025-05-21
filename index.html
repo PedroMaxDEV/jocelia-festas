@@ -51,6 +51,8 @@
   </style>
 </head>
 <body>
+ <div id="confetti-container"></div>
+
   <div id="welcomeModal">
     <div id="welcomeBox" class="animate__animated animate__fadeInDown">
       <h2>Bem-vindo ao site da Jocelia Festas!</h2>
@@ -60,10 +62,16 @@
       <button onclick="enterSite()">Entrar</button>
     </div>
   </div>
-<div class="logo"><img src="/img/JF.PNG" alt=""></div>
-<div class="confete"><img src="/img/confete.png" alt=""></div>
+  
   <header>
-    <h1>JOCELIA FESTAS</h1>
+<div class="logo-container">
+  <img src="img/JF.PNG" class="logo-icon" alt="Ícone esquerdo" />
+  <h1>JOCELIA FESTAS</h1>
+  <img src="img/confete.png" class="logo-icon" alt="Ícone direito" />
+</div>
+    <div class="logo"><img src="img/JF.PNG" alt=""></div>
+<div class="confete"><img src="img/confete.png" alt=""></div>
+  
     <input type="text" id="searchBar" placeholder="Buscar produtos, ID ou palavras-chave..." />
     <ul id="suggestions"></ul>
     <button id="openCart">🛒 Carrinho</button>
@@ -122,5 +130,27 @@
   </script>
 
   <script src="js/script.js"></script>
+
+<script>
+  const container = document.getElementById('confetti-container');
+  const cores = ['#ffff00', '#ef4896', '#63d2bf', '#f87171', '#a78bfa'];
+
+  function criarConfete() {
+    const confete = document.createElement('span');
+    confete.classList.add('confetti');
+    const tamanho = Math.floor(Math.random() * 9) + 5;
+    confete.style.width = `${tamanho}px`;
+    confete.style.height = `${tamanho}px`;
+    confete.style.left = `${Math.random() * 100}%`;
+    confete.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+    confete.style.animationDuration = `${2 + Math.random() * 3}s`;
+    confete.style.animationDelay = `${Math.random()}s`;
+    container.appendChild(confete);
+    setTimeout(() => confete.remove(), 5000);
+  }
+
+  setInterval(criarConfete, 200);
+</script>
+
 </body>
 </html>

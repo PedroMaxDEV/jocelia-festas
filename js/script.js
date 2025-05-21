@@ -1,4 +1,3 @@
-// script.js atualizado com suporte a tags e ID sem quebrar funcionalidades existentes
 let produtos = [];
 let carrinho = [];
 let imagemAtual = 0;
@@ -167,46 +166,57 @@ document.querySelectorAll('.category-btn').forEach(btn => {
   };
 });
 
+// 🔍 Busca com agrupamento e suporte a tags
 document.getElementById('searchBar').addEventListener('input', e => {
   const texto = e.target.value.toLowerCase();
+  const sugestoesAgrupadas = {};
 
-  let resultados;
-  if (texto.startsWith('id:')) {
-    const id = parseInt(texto.replace('id:', '').trim());
-    resultados = produtos.filter(p => p.id === id);
-  } else {
-    resultados = produtos.filter(p => {
-      const nome = p.nome.toLowerCase();
-      const descricao = (p.descricao || '').toLowerCase();
-      const tags = (p.tags || []).join(' ').toLowerCase();
-      return nome.includes(texto) || descricao.includes(texto) || tags.includes(texto);
-    });
-  }
+  produtos.forEach(prod => {
+    const nome = prod.nome.toLowerCase();
+    const descricao = (prod.descricao || '').toLowerCase();
+    const tags = (prod.tags || []).map(t => t.toLowerCase());
 
-  exibirProdutos(resultados);
+    if (
+      nome.includes(texto) ||
+      descricao.includes(texto) ||
+      tags.some(t => t.includes(texto)) ||
+      `id:${prod.id}` === texto
+    ) {
+      if (!sugestoesAgrupadas[nome]) {
+        sugestoesAgrupadas[nome] = [];
+      }
+      sugestoesAgrupadas[nome].push(prod);
 
-  const sugestoes = document.getElementById('suggestions');
-  sugestoes.innerHTML = '';
+      tags.forEach(tag => {
+        const chaveTag = `#${tag}`;
+        if (!sugestoesAgrupadas[chaveTag]) {
+          sugestoesAgrupadas[chaveTag] = [];
+        }
+        sugestoesAgrupadas[chaveTag].push(prod);
+      });
+    }
+  });
 
-  resultados.slice(0, 5).forEach(p => {
+  const lista = document.getElementById('suggestions');
+  lista.innerHTML = '';
+
+  Object.keys(sugestoesAgrupadas).slice(0, 5).forEach(chave => {
+    const grupo = sugestoesAgrupadas[chave];
     const li = document.createElement('li');
-    li.textContent = `${p.nome}`;
-    li.onclick = () => exibirProdutos([p]);
-    sugestoes.appendChild(li);
+    li.textContent = `${chave} (${grupo.length} produtos)`;
+    li.onclick = () => exibirProdutos(grupo);
+    lista.appendChild(li);
   });
 });
 
 carregarProdutos();
 
+// Sugestões visuais
 const searchInput = document.getElementById('searchBar');
 const suggestions = document.getElementById('suggestions');
 
 searchInput.addEventListener('input', () => {
-  if (searchInput.value.trim() === '') {
-    suggestions.style.display = 'none';
-  } else {
-    suggestions.style.display = 'block';
-  }
+  suggestions.style.display = searchInput.value.trim() ? 'block' : 'none';
 });
 
 suggestions.addEventListener('click', (e) => {
@@ -222,12 +232,13 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// 💾 Nome do cliente persistente
 let nomeCliente = localStorage.getItem('nomeCliente');
-if (!nomeCliente) {
+if (!nomeCliente || nomeCliente.trim() === '') {
   nomeCliente = prompt('Bem-vindo! Qual o seu nome?');
-  if (nomeCliente) {
-    localStorage.setItem('nomeCliente', nomeCliente);
-    alert(`Olá, ${nomeCliente}! Explore nossos produtos 😄`);
+  if (nomeCliente && nomeCliente.trim() !== '') {
+    localStorage.setItem('nomeCliente', nomeCliente.trim());
+    alert(`Olá, ${nomeCliente.trim()}! Explore nossos produtos 😄`);
   }
 }
 
@@ -245,4 +256,3 @@ window.addEventListener('click', function (e) {
     modal.style.display = 'none';
   }
 });
-

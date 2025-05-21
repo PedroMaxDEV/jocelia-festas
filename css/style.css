@@ -69,6 +69,7 @@ header h1 {
   justify-content: center;
   flex-wrap: wrap;
   margin: 10px 0;
+    position: sticky;
 }
 
 .category-btn {
@@ -80,6 +81,7 @@ header h1 {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
+   position: sticky;
 }
 
 main {
@@ -102,6 +104,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease;
+  z-index: 1;
 }
 
 .produto:hover {
@@ -351,6 +354,7 @@ main {
   align-items: center;
   gap: 10px;
   margin-top: 15px;
+  z-index: 11;
 }
 
 .nav-buttons button {
@@ -361,34 +365,81 @@ main {
   border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
+  z-index: 11;
 }
 
 .nav-buttons .close {
   background-color: #ef4896;
   font-size: 20px;
   padding: 10px 14px;
+  z-index: 11;
 }
 .logo {
-  position: fixed;
-  top: 5px;
-  left: 111px;
-  z-index: 1000;
+display: none;
 }
-
-.logo img {
-  width: 63px;
-  height: auto;
-}
-
 .confete {
+  display: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffff00; /* Ou a cor que estiver usando no seu título */
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#confetti-container {
   position: fixed;
-  top: 0px;
-  right: 115px;
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.confete img {
-  width: 70px;
-  height: auto;
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  opacity: 0.7;
+  animation: fall linear infinite;
+  border-radius: 50%;
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
